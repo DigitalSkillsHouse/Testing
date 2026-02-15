@@ -39,6 +39,7 @@ export function ContactForm() {
 
     try {
       // Ready for webhook or API integration - replace with your endpoint
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars -- used when integrating API
       const payload = {
         name: formData.get("name"),
         phone: formData.get("phone"),
@@ -46,8 +47,7 @@ export function ContactForm() {
         serviceNeeded: formData.get("serviceNeeded"),
         message: formData.get("message"),
       };
-
-      // Example: await fetch('/api/contact', { method: 'POST', body: JSON.stringify(payload) });
+      // TODO: await fetch('/api/contact', { method: 'POST', body: JSON.stringify(payload) });
       await new Promise((r) => setTimeout(r, 800));
       setStatus("success");
       form.reset();
