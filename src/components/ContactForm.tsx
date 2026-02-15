@@ -98,7 +98,7 @@ export function ContactForm() {
           type="tel"
           required
           className="mt-1 block w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
-          placeholder="(206) 555-0123"
+          placeholder="+923166763282"
         />
         {errors.phone && <p className="mt-1 text-sm text-red-600">{errors.phone}</p>}
       </div>

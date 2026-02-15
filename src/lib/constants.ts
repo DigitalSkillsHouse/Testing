@@ -1,7 +1,7 @@
 export const SITE_CONFIG = {
   name: "Seattle Sparkle Cleaning",
   tagline: "Professional House Cleaning Services in Seattle, WA",
-  phone: "(206) 555-0123",
+  phone: "+923166763282",
   email: "info@seattlesparklecleaning.com",
   address: {
     street: "123 Clean Street",
