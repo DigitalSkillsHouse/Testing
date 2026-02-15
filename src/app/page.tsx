@@ -73,7 +73,7 @@ export default function HomePage() {
 
       <Hero
         headline="House Cleaning Services in Seattle, WA"
-        subtext="Professional residential cleaning for Seattle homes. Trusted, reliable, and satisfaction guaranteed. Get your free quote today."
+        subtext="Professional residential cleaning for Seattle homes. Trusted, reliable, and satisfaction guaranteed. Get your free quote today—we&apos;re here to help."
         showCTA
         variant="home"
       />
