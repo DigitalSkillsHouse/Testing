@@ -10,55 +10,100 @@ interface HeroProps {
 
 export function Hero({ headline, subtext, showCTA = true, variant = "home" }: HeroProps) {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-blue-600 to-blue-800 px-4 py-16 text-white sm:py-24 lg:py-28">
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.05\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40" />
-      <div className="relative mx-auto max-w-4xl text-center">
-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-          {headline}
-        </h1>
-        {subtext && (
-          <p className="mt-4 text-lg text-blue-100 sm:text-xl">
-            {subtext}
-          </p>
-        )}
-        {showCTA && (
-          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a
-              href={`tel:${SITE_CONFIG.phone.replace(/\D/g, "")}`}
-              className="inline-flex items-center rounded-lg bg-white px-6 py-3 font-semibold text-blue-700 shadow-lg transition hover:bg-blue-50"
-            >
-              Call Now: {SITE_CONFIG.phone}
-            </a>
-            <Link
-              href="/contact"
-              className="inline-flex items-center rounded-lg border-2 border-white px-6 py-3 font-semibold text-white transition hover:bg-white/10"
-            >
-              Get Free Quote
-            </Link>
+    <section className="relative bg-slate-50">
+      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+        <div className="mx-auto max-w-3xl lg:max-w-none">
+          <div className="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
+            <div>
+              {variant === "home" && (
+                <p className="text-sm font-semibold uppercase tracking-wider text-blue-600">
+                  Seattle&apos;s Trusted Cleaners
+                </p>
+              )}
+              <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:mt-5 sm:text-4xl lg:text-5xl">
+                {headline}
+              </h1>
+              {subtext && (
+                <p className="mt-4 text-lg text-slate-600 sm:mt-5">
+                  {subtext}
+                </p>
+              )}
+              {showCTA && (
+                <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+                  <a
+                    href={`tel:${SITE_CONFIG.phone.replace(/\D/g, "")}`}
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-3.5 font-semibold text-white shadow-md transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  >
+                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                    </svg>
+                    {SITE_CONFIG.phone}
+                  </a>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-slate-300 bg-white px-6 py-3.5 font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2"
+                  >
+                    Get Free Quote
+                  </Link>
+                </div>
+              )}
+              {variant === "home" && (
+                <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 border-t border-slate-200 pt-8">
+                  <span className="flex items-center gap-2 text-sm text-slate-600">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-green-100 text-green-600">
+                      <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </span>
+                    Licensed & Insured
+                  </span>
+                  <span className="flex items-center gap-2 text-sm text-slate-600">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-green-100 text-green-600">
+                      <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </span>
+                    Eco-Friendly
+                  </span>
+                  <span className="flex items-center gap-2 text-sm text-slate-600">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-green-100 text-green-600">
+                      <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </span>
+                    Satisfaction Guaranteed
+                  </span>
+                </div>
+              )}
+            </div>
+            <div className="mt-10 hidden lg:mt-0 lg:block">
+              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-500 to-blue-700 p-8 text-white shadow-xl sm:p-10">
+                <div className="relative z-10">
+                  <p className="text-sm font-medium uppercase tracking-wider text-blue-100">
+                    Quick contact
+                  </p>
+                  <p className="mt-2 text-2xl font-bold sm:text-3xl">
+                    Ready for a cleaner home?
+                  </p>
+                  <p className="mt-3 text-blue-100">
+                    Call now for a free quote. Same-day and recurring cleaning available.
+                  </p>
+                  <a
+                    href={`tel:${SITE_CONFIG.phone.replace(/\D/g, "")}`}
+                    className="mt-6 inline-flex items-center gap-2 rounded-lg bg-white px-5 py-2.5 font-semibold text-blue-700 transition hover:bg-blue-50"
+                  >
+                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                    </svg>
+                    {SITE_CONFIG.phone}
+                  </a>
+                </div>
+                <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-white/10" />
+                <div className="absolute -bottom-12 -right-12 h-40 w-40 rounded-full bg-white/5" />
+              </div>
+            </div>
           </div>
-        )}
-        {variant === "home" && (
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-6 text-sm text-blue-100">
-            <span className="flex items-center gap-1">
-              <svg className="h-5 w-5 text-green-300" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              Licensed & Insured
-            </span>
-            <span className="flex items-center gap-1">
-              <svg className="h-5 w-5 text-green-300" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              Eco-Friendly Products
-            </span>
-            <span className="flex items-center gap-1">
-              <svg className="h-5 w-5 text-green-300" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              Satisfaction Guaranteed
-            </span>
-          </div>
-        )}
+        </div>
       </div>
     </section>
   );
