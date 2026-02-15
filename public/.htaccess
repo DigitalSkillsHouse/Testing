@@ -1,0 +1,16 @@
+# Serve index.html for directory root
+DirectoryIndex index.html
+
+# Disable directory listing
+Options -Indexes
+
+# Optional: redirect trailing slash for consistency (e.g. /about/ -> /about)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  # If request is for a directory that has index.html, serve it
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+)$ $1.html [L]
+</IfModule>
